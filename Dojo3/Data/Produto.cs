@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Console3
+namespace Data
 {
-    class Produto
+    public class Produto
     {
         public int ID { get; set; }
         public string Nome { get; set; }
@@ -18,7 +18,7 @@ namespace Console3
 
         }
 
-        public Produto(int id,string nome,decimal valor)
+        public Produto(int id, string nome, decimal valor)
         {
             this.ID = id;
             this.Nome = nome;

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Console3
+namespace Data
 {
-    class Vendedor
+    public class Vendedor
     {
         public int Id { get; set; }
         public string Nome { get; set; }
