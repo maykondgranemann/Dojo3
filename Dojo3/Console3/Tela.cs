@@ -30,7 +30,8 @@ namespace Console3
             {
                 Console.Clear();
                 Cabecalho();
-                funcaoEscolha(funcaoOpcoes());
+                escolha = funcaoOpcoes();
+                funcaoEscolha(escolha);
             } while (escolha != 0);
         }
     }

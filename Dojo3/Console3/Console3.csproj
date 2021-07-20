@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crud.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="ModuloProduto.cs" />
     <Compile Include="ModuloVendedor.cs" />
-    <Compile Include="Operacoes.cs" />
+    <Compile Include="OperacoesVendedor.cs" />
+    <Compile Include="OperacoesProduto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tela.cs" />

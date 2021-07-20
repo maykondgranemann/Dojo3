@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class Vendedor
+    public class Vendedor : BaseModel
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
         public string Matricula { get; set; }
         public string Setor { get; set; }
 

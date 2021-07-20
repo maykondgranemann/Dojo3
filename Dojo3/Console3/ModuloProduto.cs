@@ -8,7 +8,7 @@ namespace Console3
 {
     public class ModuloProduto : Tela
     {
-        Operacoes operacao = new Operacoes();
+        OperacoesProduto crud = new OperacoesProduto();
 
         public ModuloProduto() : base("Produto")
         {
@@ -25,16 +25,16 @@ namespace Console3
             switch (escolha)
             {
                 case 1:
-                    operacao.CadastrarProduto();
+                    crud.Create();
                     break;
                 case 2:
-                    operacao.ListarProduto();
+                    crud.Read();
                     break;
                 case 3:
-                    operacao.UpdateProduto();
+                    crud.Update();
                     break;
                 case 4:
-                    operacao.DeletaProduto();
+                    crud.Delete();
                     break;
                 default:
                     Console.WriteLine("Opção Inválida!");

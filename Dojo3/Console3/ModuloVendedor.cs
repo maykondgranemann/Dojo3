@@ -8,12 +8,14 @@ namespace Console3
 {
     public class ModuloVendedor : Tela
     {
+        OperacoesVendedor crud = new OperacoesVendedor();
+
         public ModuloVendedor() : base("Vendedor")
         {
             this.funcaoEscolha = Escolha;
             this.funcaoOpcoes = Opcoes;
         }
-        Operacoes operacao = new Operacoes();
+        
        
 
         private void Escolha(int escolha)
@@ -21,16 +23,16 @@ namespace Console3
             switch (escolha)
             {
                 case 1:
-                    operacao.CadastrarProduto();
+                    crud.Create();
                     break;
                 case 2:
-                    operacao.ListarProduto();
+                    crud.Read();
                     break;
                 case 3:
-                    operacao.UpdateProduto();
+                    crud.Update();
                     break;
                 case 4:
-                    operacao.DeletaProduto();
+                    crud.Delete();
                     break;
                 default:
                     Console.WriteLine("Opção Inválida!");

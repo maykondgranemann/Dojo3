@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class Produto
-    {
-        public int ID { get; set; }
-        public string Nome { get; set; }
-
+    public class Produto : BaseModel
+    { 
         public decimal Valor { get; set; }
 
         public Produto()
@@ -20,14 +17,14 @@ namespace Data
 
         public Produto(int id, string nome, decimal valor)
         {
-            this.ID = id;
+            this.Id = id;
             this.Nome = nome;
             this.Valor = valor;
         }
 
         public override string ToString()
         {
-            return ($"Id: {ID}, Nome: {Nome}, Valor: {Valor}\n--------");
+            return ($"Id: {Id}, Nome: {Nome}, Valor: {Valor}\n--------");
         }
     }
 }
