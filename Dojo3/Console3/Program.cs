@@ -11,7 +11,7 @@ namespace Console3
         static void Main(string[] args)
         {
             Menu menusinho = new Menu();
-            menusinho.Cabecalho();
+            menusinho.CriarMenu();
         }
     }
 }
