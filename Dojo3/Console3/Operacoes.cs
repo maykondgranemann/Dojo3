@@ -19,6 +19,18 @@ namespace Console3
             produto.Valor = Convert.ToDecimal(Console.ReadLine());
 
         }
+        public void CadastrarVendedor() 
+        {
+            Vendedor vendedor = new Vendedor();
+            Console.WriteLine("Insira o ID do venmdedor:");
+            vendedor.Id=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Insira o nome do vendedor:");
+            vendedor.Nome = Console.ReadLine();
+            Console.WriteLine("Insira a matricula do vendedor:");
+            vendedor.Matricula = Console.ReadLine();
+            Console.WriteLine("Insira o setor do vendedor:");
+            vendedor.Setor = Console.ReadLine();
+        }
         public void Update(int id)
         {
 
