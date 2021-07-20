@@ -9,12 +9,12 @@ namespace Console3
 {
     class Operacoes
     {
-        public List<Produto> produtos = new List<Produto>();
-        public List<Vendedor> vendedores = new List<Vendedor>();
+        public static List<Produto> produtos = new List<Produto>();
+        public static List<Vendedor> vendedores = new List<Vendedor>();
 
-        Produto produto = new Produto();
         public void CadastrarProduto()
         {
+            Produto produto = new Produto();
             Console.WriteLine("Insira as ID do produto");
             produto.ID = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Insira o nome do produto");
@@ -41,9 +41,23 @@ namespace Console3
         {
 
         }
-        public void Delete(int id)
+        public void DeletaProduto(int id)
         {
-
+            bool encontrado = false;
+            foreach (var produto in produtos)
+            {
+                if (produto.ID.Equals(id))
+                {
+                    encontrado = true;
+                    produtos.Remove(produto);
+                    Console.WriteLine("Produto deletado");
+                    break;
+                }
+            }
+            if (!encontrado)
+            {
+                Console.WriteLine("Produto não encontrado.");
+            }
         }
         public void ListarProduto()
         {

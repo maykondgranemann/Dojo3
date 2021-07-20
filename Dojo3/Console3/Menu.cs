@@ -17,46 +17,38 @@ namespace Console3
         
         public void Opcoes()
         {
-            Console.WriteLine("1-Cadastra Produto\n2-Cadastra Vendedor\n3-Listar Produtos\n4-Listar Vendedores\n0-Sair");
+            Console.WriteLine("1-Cadastra Produto\n2-Cadastra Vendedor\n3-Listar Produtos\n4-Listar Vendedores\n5-Deletar Produto por id\n0-Sair");
             Console.WriteLine("***********************************************************");
         }
         public void CriarMenu()
         {
-            int escolha = 0;
-
-            Cabecalho();
-            Opcoes();
+                int escolha = 0;
             do
             {
+                Cabecalho();
+                Opcoes();
                 Console.Write("Opção:");
-                try
-                {
-                    escolha = Convert.ToInt32(Console.ReadLine());
-                }
-                catch
-                {
-                }
+                escolha = Convert.ToInt32(Console.ReadLine());
                 switch (escolha)
                 {
                     case 1:
                         operacao.CadastrarProduto();
-                        Cabecalho();
-                        Opcoes();
                         break;
                     case 2:
                         operacao.CadastrarVendedor();
-                        Cabecalho();
-                        Opcoes();
                         break;
                     case 3:
                         operacao.ListarProduto();
-                        Cabecalho();
-                        Opcoes();
                         break;
                     case 4:
                         operacao.ListarVendedor();
-                        Cabecalho();
-                        Opcoes();
+                        break;
+                    case 5:
+                        Console.Clear();
+                        operacao.ListarProduto();
+                        Console.Write("Digite o id do produto que deseja deletar: ");
+                        int id = Convert.ToInt32(Console.ReadLine());
+                        operacao.DeletaProduto(id);
                         break;
                     default:
                         Console.WriteLine("Opção Inválida!");
