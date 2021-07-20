@@ -9,6 +9,7 @@ namespace Console3
     class Operacoes
     {
         public List<Produto> produtos = new List<Produto>();
+        public List<Vendedor> vendedores = new List<Vendedor>();
 
         Produto produto = new Produto();
         public void CadastrarProduto()
@@ -32,6 +33,8 @@ namespace Console3
             vendedor.Matricula = Console.ReadLine();
             Console.WriteLine("Insira o setor do vendedor:");
             vendedor.Setor = Console.ReadLine();
+
+            vendedores.Add(vendedor);
         }
         public void Update(int id)
         {
@@ -53,6 +56,20 @@ namespace Console3
             else
             {
                 Console.WriteLine("Nenhum produto cadastrado.");
+            }
+        }
+        public void ListarVendedor()
+        {
+            if(vendedores.Count > 0)
+            {
+                foreach (var vendedor in vendedores)
+                {
+                    Console.WriteLine(vendedor.ToString());
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nenhum vendedor cadastrado.");
             }
         }
         public void Listar()

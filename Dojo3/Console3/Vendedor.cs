@@ -26,5 +26,10 @@ namespace Console3
             this.Matricula = matricula;
             this.Setor = setor;
         }
+
+        public override string ToString()
+        {
+            return $"ID: {this.Id} \nNome: {this.Nome} \nMatrícula: {this.Matricula} \nSetor: {this.Setor}";
+        }
     }
 }
