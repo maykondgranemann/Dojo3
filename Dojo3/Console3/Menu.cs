@@ -17,7 +17,7 @@ namespace Console3
         
         public void Opcoes()
         {
-            Console.WriteLine("1-Cadastra Produto\n2-Cadastra Vendedor\n0-Sair");
+            Console.WriteLine("1-Cadastra Produto\n2-Cadastra Vendedor\n3-Listar Produto\n0-Sair");
             Console.WriteLine("***********************************************************");
         }
         public void CriarMenu()
@@ -45,6 +45,11 @@ namespace Console3
                         break;
                     case 2:
                         operacao.CadastrarVendedor();
+                        Cabecalho();
+                        Opcoes();
+                        break;
+                    case 3:
+                        operacao.ListarProduto();
                         Cabecalho();
                         Opcoes();
                         break;

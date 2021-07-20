@@ -25,5 +25,9 @@ namespace Console3
             this.Valor = valor;
         }
 
+        public override string ToString()
+        {
+            return ($"Id: {ID}, Nome: {Nome}, Valor: {Valor}\n--------");
+        }
     }
 }

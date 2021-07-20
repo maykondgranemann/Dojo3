@@ -8,6 +8,8 @@ namespace Console3
 {
     class Operacoes
     {
+        public List<Produto> produtos = new List<Produto>();
+
         Produto produto = new Produto();
         public void CadastrarProduto()
         {
@@ -17,7 +19,7 @@ namespace Console3
             produto.Nome = Console.ReadLine();
             Console.WriteLine("Insira o valor do produto");
             produto.Valor = Convert.ToDecimal(Console.ReadLine());
-
+            produtos.Add(produto);
         }
         public void CadastrarVendedor() 
         {
@@ -38,6 +40,20 @@ namespace Console3
         public void Delete(int id)
         {
 
+        }
+        public void ListarProduto()
+        {
+            if (produtos.Count > 0)
+            {
+                foreach (Produto produto in produtos)
+                {
+                    Console.WriteLine(produto.ToString());
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nenhum produto cadastrado.");
+            }
         }
         public void Listar()
         {
