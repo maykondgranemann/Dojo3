@@ -43,7 +43,7 @@ namespace Console3
             vendedor.Setor = Console.ReadLine();
         }
 
-        public void Update()
+        public void UpdateVendedor()
         {
             Vendedor model = new Vendedor();
             ListarVendedor();
@@ -68,8 +68,17 @@ namespace Console3
                 CadastroEdita(model);
             }
         }
-        public void DeletaProduto(int id)
+        public void UpdateProduto()
         {
+        }
+        public void DeletaVendedor()
+        { 
+        }
+        public void DeletaProduto()
+        {
+            ListarProduto();
+            Console.Write("Digite o id do produto que deseja deletar: ");
+            int id = Convert.ToInt32(Console.ReadLine());
             bool encontrado = false;
             foreach (var produto in produtos)
             {
@@ -99,7 +108,9 @@ namespace Console3
             {
                 Console.WriteLine("Nenhum produto cadastrado.");
             }
-        }
+            PausarImpressao();
+        }       
+
         public void ListarVendedor()
         {
             if(vendedores.Count > 0)
@@ -113,10 +124,13 @@ namespace Console3
             {
                 Console.WriteLine("Nenhum vendedor cadastrado.");
             }
+            PausarImpressao();
         }
-        public void Listar()
-        {
 
+        private static void PausarImpressao()
+        {
+            Console.Write("Precione qualquer tecla para continuar!");
+            Console.ReadLine();
         }
     }
 }
