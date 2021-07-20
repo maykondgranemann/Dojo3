@@ -17,7 +17,13 @@ namespace Console3
         
         public void Opcoes()
         {
-            Console.WriteLine("1-Cadastra Produto\n2-Cadastra Vendedor\n3-Listar Produtos\n4-Listar Vendedores\n5-Deletar Produto por id\n0-Sair");
+            Console.WriteLine("[1] -Cadastra Produto" +
+                            "\n[2] -Cadastra Vendedor" +
+                            "\n[3] -Listar Produtos" +
+                            "\n[4] -Listar Vendedores" +
+                            "\n[5] -Editar Vendedor" +
+                            "\n[6] -Deletar Produto" +
+                            "\n[0] -Sair");
             Console.WriteLine("***********************************************************");
         }
         public void CriarMenu()
@@ -25,6 +31,7 @@ namespace Console3
                 int escolha = 0;
             do
             {
+                Console.Clear();
                 Cabecalho();
                 Opcoes();
                 Console.Write("Opção:");
@@ -39,12 +46,18 @@ namespace Console3
                         break;
                     case 3:
                         operacao.ListarProduto();
+                        Console.Write("Precione qualquer tecla para continuar!");
+                        Console.ReadLine();
                         break;
                     case 4:
                         operacao.ListarVendedor();
+                        Console.Write("Precione qualquer tecla para continuar!");
+                        Console.ReadLine();
                         break;
                     case 5:
-                        Console.Clear();
+                        operacao.Update();
+                        break;
+                    case 6:
                         operacao.ListarProduto();
                         Console.Write("Digite o id do produto que deseja deletar: ");
                         int id = Convert.ToInt32(Console.ReadLine());

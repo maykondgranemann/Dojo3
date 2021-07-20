@@ -23,23 +23,50 @@ namespace Console3
             produto.Valor = Convert.ToDecimal(Console.ReadLine());
             produtos.Add(produto);
         }
-        public void CadastrarVendedor() 
+        public void CadastrarVendedor()
         {
             Vendedor vendedor = new Vendedor();
             Console.WriteLine("Insira o ID do venmdedor:");
-            vendedor.Id=Convert.ToInt32(Console.ReadLine());
+            vendedor.Id = Convert.ToInt32(Console.ReadLine());
+            CadastroEdita(vendedor);
+
+            vendedores.Add(vendedor);
+        }
+
+        private static void CadastroEdita(Vendedor vendedor)
+        {
             Console.WriteLine("Insira o nome do vendedor:");
             vendedor.Nome = Console.ReadLine();
             Console.WriteLine("Insira a matricula do vendedor:");
             vendedor.Matricula = Console.ReadLine();
             Console.WriteLine("Insira o setor do vendedor:");
             vendedor.Setor = Console.ReadLine();
-
-            vendedores.Add(vendedor);
         }
-        public void Update(int id)
-        {
 
+        public void Update()
+        {
+            Vendedor model = new Vendedor();
+            ListarVendedor();
+            Console.WriteLine("Digite um Id para Alterar:");
+            int IdV = Convert.ToInt32(Console.ReadLine());
+            foreach (Vendedor vend in vendedores)
+            {
+                if (IdV.Equals(vend.Id))
+                {
+                    model = vend;
+                    Console.WriteLine("Item Localizado!");
+                    break;
+                }
+                Console.WriteLine("Vendedor não encontrado!");
+            }
+            if (model.Id == 0)
+            {
+                Console.WriteLine("Não tem nada aqui");
+            }
+            else 
+            {
+                CadastroEdita(model);
+            }
         }
         public void DeletaProduto(int id)
         {
